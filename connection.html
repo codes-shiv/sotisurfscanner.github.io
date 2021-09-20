@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<link rel="stylesheet" href="styles.css">
+		
+		<section id="surf_logo">
+			<div class="margin-top rcorners center-div">
+				<div class="left-margin bottom-padding">
+	<div class="sub-title-top-bottom">
+					<h1>SOTI SURF<br></h1>
+					</div>
+					
+					<img src="app_icon.png" alt="Italian Trulli" width="100" height="100">
+	
+			</div>
+		</section>
+		
+		<section id="scanner_functions">
+			<div class="margin-top rcorners center-div">
+				<div class="left-margin bottom-padding">
+					<div class="sub-title-top-bottom">
+						<h1>Scanner Functions<br></h1>
+					</div>
+					<button onclick="launchPairingActivity()">Launch Pairing Screen</button><br><br>
+					<button onclick="disconnectDisplayBtn()">Disconnect Display</button><br><br>
+					<button onclick="pickOrientationBtn()">Pick Orientation</button><br><br>
+					<button onclick="checkConnectionStatusBtn()">Check Connection State</button><br><br>
+					
+				</div>
+			</div>
+		</section>
+	
+		
+	</body>
+	
+	<script>
+		function launchPairingActivity() {
+			var time = new Date();
+			document.getElementById("demo").innerHTML = "Launch Connect Pairing Activity Command Triggered at "+time;
+			proGlove.proGloveLaunchPairingActivity();
+		}
+		
+		function disconnectDisplayBtn() {
+			var time = new Date();
+			document.getElementById("demo").innerHTML = "Disconnect Display Command Triggered at "+time;
+			proGlove.proGloveDisconnectDisplay();
+		}
+		
+		function pickOrientationBtn() {
+			var time = new Date();
+			document.getElementById("demo").innerHTML = "Pick Orientation Command Triggered at "+time;
+			proGlove.proGlovePickOrientation();
+		}
+		
+		function checkConnectionStatusBtn() {
+			var time = new Date();
+			document.getElementById("demo").innerHTML = "Pick Orientation Command Triggered at "+time;
+			proGlove.getScannerConnectionState();
+		}
+		
+		function enableDefaultScanFeedback(){
+			var e = document.getElementById("feedback");
+			var feedback = e.value;
+			var time = new Date();
+			var booleanValue = 0;
+			if (document.getElementById("check").checked) {
+				booleanValue = 1;
+			}
+			document.getElementById("demo").innerHTML = Boolean(booleanValue) + " enableDefaultScanFeedback Command Triggered at "+time;
+			proGlove.proGloveEnableDefaultScanFeedback(Boolean(booleanValue));
+		}
+	</script>
+</html>

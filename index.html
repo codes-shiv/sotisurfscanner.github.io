@@ -7,192 +7,49 @@
 	<body>
 		<link rel="stylesheet" href="styles.css">
 		
-		<section id="scanner_functions">
-			<div class="margin-top rcorners center-div">
-				<div class="left-margin bottom-padding">
-					<div class="sub-title-top-bottom">
-						<h1>Scanner Functions<br></h1>
-					</div>
-					<button onclick="launchPairingActivity()">Launch Pairing Screen</button><br><br>
-					<button onclick="disconnectDisplayBtn()">Disconnect Display</button><br><br>
-					<button onclick="pickOrientationBtn()">Pick Orientation</button><br><br>
-					<button onclick="checkConnectionStatusBtn()">Check Connection State</button><br><br>
-					
-				</div>
-			</div>
-		</section>
-		<section id="scan_barcodes">
-			<div class="margin-top rcorners center-div">
-				<div class="left-margin bottom-padding">
-					<div class="sub-title-top-bottom">
-						<h1>Scan Barcodes<br></h1>
-					</div>
-					<form>
-						<label for="fname">BarCode1:</label><br>
-						<input type="text" id="fname" name="fname" value=""><br><br>
-						<label for="lname">BarCode2:</label><br>
-						<input type="text" id="lname" name="lname" value=""><br><br>
-						<label for="lname">BarCode3:</label><br>
-						<input type="text" id="lname" name="lname" value=""><br><br>
-						<label for="lname">BarCode4:</label><br>
-						<input type="text" id="lname" name="lname" value=""><br><br>
-					</form>
-				</div>
-			</div>
-		</section>
-		
 		<section id="surf_logo">
-			<div class="margin-top rcorners center-div">
+			<div class="margin-top white-bg center-div">
 				<div class="left-margin bottom-padding">
 	<div class="sub-title-top-bottom">
-					<h1>SOTI SURF<br></h1>
+					
 					</div>
 					
-					<img src="app_icon.png" alt="Italian Trulli" width="100" height="100">
+					<img src="proglove.jpg" alt="Italian Trulli" width="500" height="150">
+					
+				
+
+					
+	</div>
+	<div class="left-margin bottom-padding">
 	
-			</div>
+	<button onclick="window.location.href='connection.html'">Proglove Connection</button>
+						
+	</div>
+	
+	<div class="left-margin bottom-padding">
+	
+	<button onclick="window.location.href='scanning.html'">Scan Barcodes</button>
+						
+	</div>
+	
+	<div class="left-margin bottom-padding">
+	
+	<button onclick="window.location.href='display.html'">Set Screen</button>
+						
+	</div>
+	
+	<div class="left-margin bottom-padding">
+	
+	<button onclick="window.location.href='feedback.html'">Worker Feedback</button>
+						
+	</div>
+	</div>
+	
 		</section>
 		
-		<section id="scanner_functions">
-			<div class="margin-top rcorners center-div">
-				<div class="left-margin bottom-padding">
-					<div class="sub-title-top-padding">
-						<h1>Set Screen<br></h1>
-					</div>
-						<p id="demo">Template: </p>
-						<select name="template" id="template">
-							<option value="1;header1;content1">PG1</option>
-							<option value="1;;content1">PG1A</option>
-							<option value="1;header1;content1;2;header2;content2">PG2</option>
-							<option value="1;header1;content1;2;header2;content2;3;header3;content3">PG3</option>
-							<option value="1;;content1">PG1C</option>
-							<option value="1;;content1;2;;content2">PG2C</option>
-							<option value="1;;content1">PG1E</option>
-							<option value="1;;content1;2;;content2">PG2E</option>
-							<option value="1;;content1">PG1I</option>
-							<option value="1;;content1;2;;content2">PG2I</option>
-							<option value="1||content1|2||content2">PG2I</option>
-							<option value="1;;content1;2;;content2">PG2X</option>
-						</select>
-						<br>
-  
-						<p >Refresh Type : </p> 
-						<select name="refresh" id="refresh_type">
-							<option value="r1">FULL_REFRESH</option>
-							<option value="r2">PARTIAL_REFRESH</option>
-							<option value="r3">DEFAULT</option>
-						</select>
-						<br>  <br>
-						<label for="duration">Duration in Ms: </label>
-						<input type="text" id="duration" name="duration">
-
-						<button onclick="setScreenTemplate()">Set Template</button><br>
-				</div>
-			</div>
-		</section>
-		<section id="worker_feedback">
-			<div class="margin-top rcorners center-div">
-				<div class="left-margin bottom-padding">
-					<div class="sub-title-top-padding">
-						<h1>Worker Feedback<br></h1>
-					</div>
-					<p id="demo">Trigger Feedback Type: </p>
-					<select id="feedback">
-						<option value="1">ACK</option>
-						<option value="2">NACK</option>
-						<option value="3">Yellow</option>
-						<option value="4">Purple</option>
-						<option value="5">Cyan</option>
-					</select>
-					<button onclick="triggerFeedback()">Trigger Single Feedback</button><br><br>
-					<label for="inorder">Mutiple Feedback Sequence In order: </label>
-					<input type="text" id="inorder" name="inorder"><br>
-					<button onclick="triggerInorderFeedback()">Trigger Multiple Feedback</button><br><br>
-					<label class="switch">
-						<input type="checkbox" id="check">
-					</label>
-					<label for="duration">Enable/Disable Default Scan Feedback </label>
-					<button onclick="enableDefaultScanFeedback()">Set Default Scan Feedback</button><br>
-				</div>
-			</div>
-		</section>
+		
+		
 	</body>
 	
-	<script>
-		function launchPairingActivity() {
-			var time = new Date();
-			document.getElementById("demo").innerHTML = "Launch Connect Pairing Activity Command Triggered at "+time;
-			proGlove.proGloveLaunchPairingActivity();
-		}
-		
-		function disconnectDisplayBtn() {
-			var time = new Date();
-			document.getElementById("demo").innerHTML = "Disconnect Display Command Triggered at "+time;
-			proGlove.proGloveDisconnectDisplay();
-		}
-		
-		function pickOrientationBtn() {
-			var time = new Date();
-			document.getElementById("demo").innerHTML = "Pick Orientation Command Triggered at "+time;
-			proGlove.proGlovePickOrientation();
-		}
-		
-		function checkConnectionStatusBtn() {
-			var time = new Date();
-			document.getElementById("demo").innerHTML = "Pick Orientation Command Triggered at "+time;
-			proGlove.getScannerConnectionState();
-		}
-		
-		function setScreenTemplate() {
-			var time = new Date();
-			var e = document.getElementById("template");
-			var strUser = e.options[e.selectedIndex].text;
-			document.getElementById("result").innerHTML =strUser;
-			var template = strUser
-			var data= e.options[e.selectedIndex].value;
-			var refresh = document.getElementById("refresh_type");
-			var refresh_type = refresh.options[refresh.selectedIndex].text;
-			var duration = document.getElementById("duration").value;
-
-			document.getElementById("demo").innerHTML = template + " Template Command Triggered at "+time+" "+data;
-			proGlove.setScreen(template,data,null,refresh_type,duration);
-		}
-		
-		function triggerFeedback(){
-			var e = document.getElementById("feedback");
-			var feedback = e.value;
-			var time = new Date();
-
-			document.getElementById("demo").innerHTML = parseInt(feedback) + " triggerFeedback Command Triggered at "+time;
-			proGlove.proGloveTriggerPlayFeedback(parseInt(feedback));
-		}
-
-		function triggerInorderFeedback(){
-			var time = new Date();
-			var sequence = document.getElementById("inorder").value;
-
-			var arrayInt;//change string csv to int array
-			if (sequence.length === 0) {
-				arrayInt = new Array();
-			} else {
-				arrayInt = sequence.replace(/, +/g, ",").split(",").map(Number);
-			}
-			
-			document.getElementById("demo").innerHTML = arrayInt + " triggerInorderFeedback Command Triggered at "+time;
-
-			proGlove.proGloveTriggerMultiplePlayFeedback(arrayInt);
-		}
-
-		function enableDefaultScanFeedback(){
-			var e = document.getElementById("feedback");
-			var feedback = e.value;
-			var time = new Date();
-			var booleanValue = 0;
-			if (document.getElementById("check").checked) {
-				booleanValue = 1;
-			}
-			document.getElementById("demo").innerHTML = Boolean(booleanValue) + " enableDefaultScanFeedback Command Triggered at "+time;
-			proGlove.proGloveEnableDefaultScanFeedback(Boolean(booleanValue));
-		}
-	</script>
+	
 </html>

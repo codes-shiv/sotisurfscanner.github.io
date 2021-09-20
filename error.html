@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<link rel="stylesheet" href="styles.css">
+		
+		<section id="surf_logo">
+			<div class="margin-top center-div">
+				
+	<label id="text-error" style="color:white;font-size:40px;"> </br></label> 
+	
+	
+	</div>
+	
+		</section>
+		
+		
+		
+	</body>
+	
+	<script>
+        function itemNotFound(item) {
+		document.body.style.background = "red";
+            document.getElementById('text-error').innerHTML = "E: Item["
+		+item+ "] not found!";
+        }
+		
+		 function itemFound(item) {
+		document.body.style.background = "green";
+            document.getElementById('text-error').innerHTML = "E: Item["
+		+item+ "] is available!";
+        }
+    </script>
+	
+</html>
