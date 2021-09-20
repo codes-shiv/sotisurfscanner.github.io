@@ -39,26 +39,22 @@
 	
 	<script>
 		function launchPairingActivity() {
-			var time = new Date();
-			document.getElementById("demo").innerHTML = "Launch Connect Pairing Activity Command Triggered at "+time;
+		
 			proGlove.proGloveLaunchPairingActivity();
 		}
 		
 		function disconnectDisplayBtn() {
-			var time = new Date();
-			document.getElementById("demo").innerHTML = "Disconnect Display Command Triggered at "+time;
+			
 			proGlove.proGloveDisconnectDisplay();
 		}
 		
 		function pickOrientationBtn() {
-			var time = new Date();
-			document.getElementById("demo").innerHTML = "Pick Orientation Command Triggered at "+time;
+			
 			proGlove.proGlovePickOrientation();
 		}
 		
 		function checkConnectionStatusBtn() {
-			var time = new Date();
-			document.getElementById("demo").innerHTML = "Pick Orientation Command Triggered at "+time;
+			
 			proGlove.getScannerConnectionState();
 		}
 		
