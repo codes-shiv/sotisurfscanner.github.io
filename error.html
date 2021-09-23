@@ -4,13 +4,19 @@
 		<link rel="stylesheet" href="styles.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
-	<body>
+	<body style="background:green">
 		<link rel="stylesheet" href="styles.css">
 		
 		<section id="surf_logo">
 			<div class="margin-top center-div">
+			
+	<p id="bookname" style="color:white"><strong>Book title: </strong>: How to Win Friends and Influence People</p>
+<p id="bookcost" style="color:white"><strong>Cost: </strong>: $19.95</p>
+<p id="bookquantity" style="color:white"><strong>Quantity: </strong>: 3</p>
+<p id="booklocation" style="color:white"><strong>Location: </strong>: Aisle 4</p>		
+<p id="order" style="color:white"><strong>Order: </strong></p>		
 				
-	<label id="text-error" style="color:white;font-size:40px;"> </br></label> 
+	<label id="text-error" style="color:white;font-size:36px;"><br><br>Item["12345678990"] is available!" </br></label> 
 	
 	
 	</div>
@@ -24,12 +30,24 @@
 	<script>
         function itemNotFound(item) {
 		document.body.style.background = "red";
+		document.getElementById('bookname').innerHTML = "The Alchemist";
+		document.getElementById('bookcost').innerHTML = "$9.36";
+		document.getElementById('bookquantity').innerHTML = "0";
+		document.getElementById('booklocation').innerHTML = "N/A";
+		document.getElementById('order').innerHTML = "Link to order&nbsp;<a href="https://www.amazon.in/Alchemist-Paulo-Coelho/dp/9388241452/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr=">https://www.amazon.in/Alchemist-Paulo-Coelho/dp/9388241452/ref=tmm_pap_swatch_0?_encoding=UTF8&amp;qid=";
+		
             document.getElementById('text-error').innerHTML = "Item["
-		+item+ "] not found!";
+		+item+ "] is not in stock!";
         }
 		
 		 function itemFound(item) {
 		document.body.style.background = "green";
+		document.getElementById('bookname').innerHTML = "How to Win Friends and Influence People";
+		document.getElementById('bookcost').innerHTML = "$19.95";
+		document.getElementById('bookquantity').innerHTML = "3";
+		document.getElementById('booklocation').innerHTML = "Aisle 4";
+		document.getElementById("order").style.visibility = "hidden";
+
             document.getElementById('text-error').innerHTML = "Item["
 		+item+ "] is available!";
         }
