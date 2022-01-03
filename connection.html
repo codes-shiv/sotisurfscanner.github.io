@@ -27,6 +27,7 @@
 					</div>
 					<button onclick="launchPairingActivity()">Launch Pairing Screen</button><br><br>
 					<button onclick="disconnectDisplayBtn()">Disconnect Display</button><br><br>
+					<button onclick="disconnectScannerBtn()">Disconnect Scanner</button><br><br>
 					<button onclick="pickOrientationBtn()">Pick Orientation</button><br><br>
 					<button onclick="checkConnectionStatusBtn()">Check Connection State</button><br><br>
 					
@@ -47,7 +48,10 @@
 			
 			proGlove.proGloveDisconnectDisplay();
 		}
-		
+		function disconnectScannerBtn() {
+			
+			proGlove.proGloveDisconnectScanner();
+		}
 		function pickOrientationBtn() {
 			
 			proGlove.proGlovePickOrientation();
