@@ -60,30 +60,6 @@
 	</body>
 	
 	<script>
-		function launchPairingActivity() {
-			var time = new Date();
-			document.getElementById("demo").innerHTML = "Launch Connect Pairing Activity Command Triggered at "+time;
-			proGlove.proGloveLaunchPairingActivity();
-		}
-		
-		function disconnectDisplayBtn() {
-			var time = new Date();
-			document.getElementById("demo").innerHTML = "Disconnect Display Command Triggered at "+time;
-			proGlove.proGloveDisconnectDisplay();
-		}
-		
-		function pickOrientationBtn() {
-			var time = new Date();
-			document.getElementById("demo").innerHTML = "Pick Orientation Command Triggered at "+time;
-			proGlove.proGlovePickOrientation();
-		}
-		
-		function checkConnectionStatusBtn() {
-			var time = new Date();
-			document.getElementById("demo").innerHTML = "Pick Orientation Command Triggered at "+time;
-			proGlove.getScannerConnectionState();
-		}
-		
 		function setScreenTemplate() {
 			var time = new Date();
 			var e = document.getElementById("template");
@@ -96,44 +72,8 @@
 			var duration = document.getElementById("duration").value;
 
 			document.getElementById("demo").innerHTML = template + " Template Command Triggered at "+time+" "+data;
-			proGlove.setScreen(template,data,null,refresh_type,duration);
-		}
-		
-		function triggerFeedback(){
-			var e = document.getElementById("feedback");
-			var feedback = e.value;
-			var time = new Date();
-
-			document.getElementById("demo").innerHTML = parseInt(feedback) + " triggerFeedback Command Triggered at "+time;
-			proGlove.proGloveTriggerPlayFeedback(parseInt(feedback));
-		}
-
-		function triggerInorderFeedback(){
-			var time = new Date();
-			var sequence = document.getElementById("inorder").value;
-
-			var arrayInt;//change string csv to int array
-			if (sequence.length === 0) {
-				arrayInt = new Array();
-			} else {
-				arrayInt = sequence.replace(/, +/g, ",").split(",").map(Number);
-			}
 			
-			document.getElementById("demo").innerHTML = arrayInt + " triggerInorderFeedback Command Triggered at "+time;
-
-			proGlove.proGloveTriggerMultiplePlayFeedback(arrayInt);
-		}
-
-		function enableDefaultScanFeedback(){
-			var e = document.getElementById("feedback");
-			var feedback = e.value;
-			var time = new Date();
-			var booleanValue = 0;
-			if (document.getElementById("check").checked) {
-				booleanValue = 1;
-			}
-			document.getElementById("demo").innerHTML = Boolean(booleanValue) + " enableDefaultScanFeedback Command Triggered at "+time;
-			proGlove.proGloveEnableDefaultScanFeedback(Boolean(booleanValue));
+			proGlove.setScreen(template,data,null,refresh_type,duration);
 		}
 	</script>
 </html>
