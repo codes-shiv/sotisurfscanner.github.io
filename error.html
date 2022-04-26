@@ -33,7 +33,7 @@
 	        setErrorScreen();
         }
 		
-		function itemFound(item) {
+		<!--function itemFound(item) {
 		    document.body.style.background = "green";
 		    document.getElementById('deviceName').innerHTML = "Google Pixel";
 		    document.getElementById('deviceId').innerHTML = "D5427";
@@ -41,11 +41,11 @@
 		    document.getElementById('deviceLocation').innerHTML = "Gurgaon Office";
 
             document.getElementById('text-error').innerHTML = "Item["+item+ "] is available!";
-        }
+        }-->
 
         function setErrorScreen() {
 	        var barCode = document.getElementById("deviceId").value;
-			proGlove.setScreen("PG2E","1;;Error;2;;"+"Item [D4330] is not in inventory!",null,"FULL_REFRESH,"10000);
+			proGlove.setScreen("PG2E","1;;Error;2;;"+"Item [D4330] is not in inventory!",null,"FULL_REFRESH",10000);
 		}
 
 		function triggerErrorFeedback(){
