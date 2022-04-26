@@ -26,28 +26,21 @@
 </body>
 
 <script>
+
         function itemNotFound(item) {
-        document.getElementById('text-error').innerHTML = "Item["
-		+item+ "] is not in Inventory!";
-
-			        var barCode = document.getElementById("deviceId").value;
-			        proGlove.proGloveTriggerPlayFeedback(2);
-			        proGlove.setScreen("PG2E","1;;Error;2;;"+"Item ["+barCode + "] is not in inventory!",null,"FULL_REFRESH,"10000);
-
-
-
+            document.getElementById('text-error').innerHTML = "Item["+item+ "] is not in Inventory!";
+	        triggerErrorFeedback();
+	        setErrorScreen();
         }
 		
-		 function itemFound(item) {
-		document.body.style.background = "green";
-		document.getElementById('deviceName').innerHTML = "Google Pixel";
-		document.getElementById('deviceId').innerHTML = "D5427";
-		document.getElementById('deviceStatus').innerHTML = "Available";
-		document.getElementById('deviceLocation').innerHTML = "Gurgaon Office";
+		function itemFound(item) {
+		    document.body.style.background = "green";
+		    document.getElementById('deviceName').innerHTML = "Google Pixel";
+		    document.getElementById('deviceId').innerHTML = "D5427";
+		    document.getElementById('deviceStatus').innerHTML = "Available";
+		    document.getElementById('deviceLocation').innerHTML = "Gurgaon Office";
 
-
-            document.getElementById('text-error').innerHTML = "Item["
-		    +item+ "] is available!";
+            document.getElementById('text-error').innerHTML = "Item["+item+ "] is available!";
         }
 
         function setErrorScreen() {
@@ -59,7 +52,7 @@
 			proGlove.proGloveTriggerPlayFeedback(1);
 		}
 
-function setSuccessScreen() {
+        function setSuccessScreen() {
 			proGlove.setScreen("PG1C","1;;"+"Item ["D5427"] is available!",null,"FULL_REFRESH,"10000);
 		}
 
@@ -68,7 +61,5 @@ function setSuccessScreen() {
 		}
 
 
-
 </script>
-
 </html>
