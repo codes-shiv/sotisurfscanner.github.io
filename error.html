@@ -31,9 +31,9 @@
 		+item+ "] is not in Inventory!";
 
 			        var barCode = document.getElementById("deviceId").value;
-			proGlove.setScreen("PG2E","1;;Error;2;;"+"Item ["+barCode + "] is not in inventory!",null,"FULL_REFRESH,"10000);
+			        proGlove.proGloveTriggerPlayFeedback(2);
+			        proGlove.setScreen("PG2E","1;;Error;2;;"+"Item ["+barCode + "] is not in inventory!",null,"FULL_REFRESH,"10000);
 
-						proGlove.proGloveTriggerPlayFeedback(2);
 
 
         }
