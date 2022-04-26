@@ -1,49 +1,73 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="styles.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-	<body style="background:red">
-		<link rel="stylesheet" href="styles.css">
-		
-		<section id="surf_logo">
-			<div class="margin-top center-div">
-			
-	<p id="bookname" style="color:white;font-size:26px;"><strong>Book title: </strong>The Alchemist</p>
-<p id="bookcost" style="color:white;font-size:26px;"><strong>Cost: </strong>$9.36</p>
-<p id="bookquantity" style="color:white;font-size:26px;"><strong>Quantity: </strong>0</p>
-<p id="booklocation" style="color:white;font-size:26px;"><strong>Location: </strong>N/A</p>		
-<p id="order" style="color:white;font-size:26px;"><strong>Order: </strong>Link to order&nbsp;<a href="https://www.amazon.in/Alchemist-Paulo-Coelho/dp/9388241452/">https://www.amazon.in/Alchemist-Paulo-Coelho/dp/9388241452/</a></p>		
-				
-	<label id="text-error" style="color:white;font-size:36px;"><br></label> 
-	
-	
-	</div>
-	
-		</section>
-		
-		
-		
-	</body>
-	
-	<script>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background:red">
+<link rel="stylesheet" href="styles.css">
+
+<section id="surf_logo">
+    <div class="margin-top center-div">
+
+        <p id="deviceName" style="color:white;font-size:26px;"><strong>Device Name: </strong>iPad Mini</p>
+        <p id="deviceId" style="color:white;font-size:26px;"><strong>Device Id: </strong>D4330</p>
+        <p id="deviceStatus" style="color:white;font-size:26px;"><strong>Status: </strong>Not Available</p>
+        <p id="deviceLocation" style="color:white;font-size:26px;"><strong>Location: </strong>Gurgaon Office</p>
+
+        <label id="text-error" style="color:white;font-size:36px;"><br></label>
+
+
+    </div>
+
+</section>
+
+
+</body>
+
+<script>
         function itemNotFound(item) {
         document.getElementById('text-error').innerHTML = "Item["
-		+item+ "] is not in stock!";
+		+item+ "] is not in Inventory!";
+
+			        var barCode = document.getElementById("deviceId").value;
+			proGlove.setScreen("PG2E","1;;Error;2;;"+"Item ["+barCode + "] is not in inventory!",null,"FULL_REFRESH,"10000);
+
+						proGlove.proGloveTriggerPlayFeedback(2);
+
+
         }
 		
 		 function itemFound(item) {
 		document.body.style.background = "green";
-		document.getElementById('bookname').innerHTML = "How to Win Friends and Influence People";
-		document.getElementById('bookcost').innerHTML = "$19.95";
-		document.getElementById('bookquantity').innerHTML = "3";
-		document.getElementById('booklocation').innerHTML = "Aisle 4";
-		document.getElementById("order").style.visibility = "hidden";
+		document.getElementById('deviceName').innerHTML = "Google Pixel";
+		document.getElementById('deviceId').innerHTML = "D5427";
+		document.getElementById('deviceStatus').innerHTML = "Available";
+		document.getElementById('deviceLocation').innerHTML = "Gurgaon Office";
+
 
             document.getElementById('text-error').innerHTML = "Item["
 		+item+ "] is available!";
+
+  var barCode = document.getElementById("deviceId").value;
+
+
+			proGlove.setScreen("PG1C","1;;"+"Item ["+barCode + "] is available!",null,"FULL_REFRESH,"10000);
+
+						proGlove.proGloveTriggerPlayFeedback(1);
+
         }
-    </script>
-	
+
+        function setScreenTemplate() {
+	        var barCode = document.getElementById("deviceId").value;
+			proGlove.setScreen("PG2E","1;;Error;2;;"+"Item ["+barCode + "] is not in inventory!",null,"FULL_REFRESH,"10000);
+		}
+
+		function triggerFeedback(){
+			proGlove.proGloveTriggerPlayFeedback(1);
+		}
+
+
+</script>
+
 </html>

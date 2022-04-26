@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="styles.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-	<body style="background:green">
-		<link rel="stylesheet" href="styles.css">
-		
-		<section id="surf_logo">
-			<div class="margin-top center-div">
-			
-	<p id="bookname" style="color:white;font-size:26px;"><strong>Book title: </strong>How to Win Friends and Influence People</p>
-<p id="bookcost" style="color:white;font-size:26px;"><strong>Cost: </strong>$19.95</p>
-<p id="bookquantity" style="color:white;font-size:26px;"><strong>Quantity: </strong>3</p>
-<p id="booklocation" style="color:white;font-size:26px;"><strong>Location: </strong>Aisle 4</p>		
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background:green">
+<link rel="stylesheet" href="styles.css">
 
-				
-	<label id="text-error" style="color:white;font-size:36px;"><br></label> 
-	
-	
-	</div>
-	
-		</section>
-		
-		
-		
-	</body>
-	
-	<script>
+<section id="surf_logo">
+    <div class="margin-top center-div">
+
+        <p id="deviceName" style="color:white;font-size:26px;"><strong>Device Name: </strong>Google Pixel</p>
+        <p id="deviceId" style="color:white;font-size:26px;"><strong>Device Id: </strong>D5427</p>
+        <p id="deviceStatus" style="color:white;font-size:26px;"><strong>Status: </strong>Available</p>
+        <p id="deviceLocation" style="color:white;font-size:26px;"><strong>Location: </strong>Gurgaon Office</p>
+
+
+        <label id="text-error" style="color:white;font-size:36px;"><br></label>
+
+    </div>
+
+</section>
+</body>
+
+<script>
  function itemFound(item) {
             document.getElementById('text-error').innerHTML = "Item["
 		+item+ "] is available!";
         }
-    </script>
-	
+
+        function setScreenTemplate() {
+	        var barCode = document.getElementById("deviceId").value;
+
+
+			proGlove.setScreen("PG1C","1;;"+"Item ["+barCode + "] is available!",null,"FULL_REFRESH,"10000);
+		}
+
+		function triggerFeedback(){
+			proGlove.proGloveTriggerPlayFeedback(1);
+		}
+
+</script>
+
 </html>
