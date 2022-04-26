@@ -125,10 +125,33 @@
 		
 		function showError(){
 			window.location = 'error.html';
+			setErrorScreen();
+			triggerErrorFeedback();
 		}
 		
 		function showSuccess(){
 			window.location = 'success.html';
+			setScreenTemplate();
+			triggerFeedback();
+		}
+
+
+        function setScreenTemplate() {
+	        var barCode = document.getElementById("deviceId").value;
+			proGlove.setScreen("PG1C","1;;"+"Item ["+barCode + "] is available!",null,"FULL_REFRESH,"10000);
+		}
+
+		function triggerFeedback(){
+			proGlove.proGloveTriggerPlayFeedback(1);
+		}
+
+		function setErrorScreen() {
+	        var barCode = document.getElementById("deviceId").value;
+			proGlove.setScreen("PG2E","1;;Error;2;;"+"Item [D4330] is not in inventory!",null,"FULL_REFRESH,"10000);
+		}
+
+		function triggerErrorFeedback(){
+			proGlove.proGloveTriggerPlayFeedback(1);
 		}
 	</script>
 </html>
