@@ -47,25 +47,26 @@
 
 
             document.getElementById('text-error').innerHTML = "Item["
-		+item+ "] is available!";
-
-  var barCode = document.getElementById("deviceId").value;
-
-
-			proGlove.setScreen("PG1C","1;;"+"Item ["+barCode + "] is available!",null,"FULL_REFRESH,"10000);
-
-						proGlove.proGloveTriggerPlayFeedback(1);
-
+		    +item+ "] is available!";
         }
 
-        function setScreenTemplate() {
+        function setErrorScreen() {
 	        var barCode = document.getElementById("deviceId").value;
-			proGlove.setScreen("PG2E","1;;Error;2;;"+"Item ["+barCode + "] is not in inventory!",null,"FULL_REFRESH,"10000);
+			proGlove.setScreen("PG2E","1;;Error;2;;"+"Item [D4330] is not in inventory!",null,"FULL_REFRESH,"10000);
 		}
 
-		function triggerFeedback(){
+		function triggerErrorFeedback(){
 			proGlove.proGloveTriggerPlayFeedback(1);
 		}
+
+function setSuccessScreen() {
+			proGlove.setScreen("PG1C","1;;"+"Item ["D5427"] is available!",null,"FULL_REFRESH,"10000);
+		}
+
+		function triggerSuccessFeedback(){
+	    	proGlove.proGloveTriggerPlayFeedback(1);
+		}
+
 
 
 </script>
