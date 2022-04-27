@@ -26,30 +26,114 @@
 <script>
 
      
-
-     function itemFound(item) {
-		setScreenTemplate_PG2C();
-       // setScreenTemplate_PG1C();
-		triggerFeedback();
+//ABC
+     function itemFound(item) 
+     {
+		setScreenTemplate_PG1();   //Calling function with PG1 template
+      //setScreenTemplate_PG1A();  //Uncomment to call PG1A function
+      //setScreenTemplate_PG2();   //Uncomment to call PG2 function
+      //setScreenTemplate_PG3();   //Uncomment to call PG3 function
+      //setScreenTemplate_PG1C();  //Uncomment to call PG1C function
+      //setScreenTemplate_PG2C();  //Uncomment to call PG2C function
+      //setScreenTemplate_PG1E();  //Uncomment to call PG1E function
+      //setScreenTemplate_PG2E();  //Uncomment to call PG2E function
+      //setScreenTemplate_PG1I();  //Uncomment to call PG1I function
+      //setScreenTemplate_PG2I();  //Uncomment to call PG2I function
+        
+      
+		triggerFeedback_1();
+      //triggerFeedback_2();  //Uncomment to call feedback function with value 2 function
+      //triggerFeedback_3();  //Uncomment to call feedback function with value 3 function 
+      //triggerFeedback_4();  //Uncomment to call feedback function with value 4 function
+      //triggerFeedback_5();  //Uncomment to call feedback function with value 5 function
      }
 
-    function setScreenTemplate_PG2C() {
-	//  var data = "1;;Item [D5427] is available!";
-        var data = "1;;Anuj;2;;Sharma";
-		proGlove.setScreen("PG2C",data,null,"FULL_REFRESH","10000");
+    function setScreenTemplate_PG1() 
+    {
+        var data = "1;D5427;Available";
+	    proGlove.setScreen("PG1",data,null,"FULL_REFRESH","10000");
     }
 
-
-        function setScreenTemplate_PG1C() {
-	//  var data = "1;;Item [D5427] is available!";
-        var data = "1;;Anuj123;2;;Sharma";
-		proGlove.setScreen("PG1C",data,null,"FULL_REFRESH","10000");
+    function setScreenTemplate_PG1A() 
+    {
+    	var data = "1;;Available";
+	    proGlove.setScreen("PG1A",data,null,"FULL_REFRESH","10000");
     }
 
-    
+    function setScreenTemplate_PG2() 
+    {
+    	var data = "1;D5427;Available;2;Model;Google Pixel";
+	    proGlove.setScreen("PG2",data,null,"FULL_REFRESH","10000");
+    }
 
-	function triggerFeedback(){
+    function setScreenTemplate_PG3() 
+    {
+    	var data = "1;D5427;Available;2;Model;Google Pixel;3;Quantity;1";
+	    proGlove.setScreen("PG3",data,null,"FULL_REFRESH","10000");
+    }
+
+    function setScreenTemplate_PG1C() 
+    {
+    	var data = "1;;Available";
+	    proGlove.setScreen("PG1C",data,null,"FULL_REFRESH","10000");
+    }
+
+    function setScreenTemplate_PG2C() 
+    {
+    	var data = "1;;Available;2;;Google Pixel";
+	    proGlove.setScreen("PG2C",data,null,"FULL_REFRESH","10000");
+    }
+
+    function setScreenTemplate_PG1E() 
+    {
+    	var data = "1;;Not Available";
+	    proGlove.setScreen("PG1E",data,null,"FULL_REFRESH","10000");
+    }
+
+    function setScreenTemplate_PG2E() 
+    {
+    	var data = "1;;Not Available;2;;iPad Mini";
+	    proGlove.setScreen("PG2E",data,null,"FULL_REFRESH","10000");
+    }
+
+    function setScreenTemplate_PG1I() 
+    {
+    	var data = "1;;No match !!!";
+	    proGlove.setScreen("PG1I",data,null,"FULL_REFRESH","10000");
+    }
+
+    function setScreenTemplate_PG2I() 
+    {
+    	var data = "1;;No match;2;;Try again...";
+	    proGlove.setScreen("PG2I",data,null,"FULL_REFRESH","10000");
+    }
+
+   
+
+
+	function triggerFeedback_1()
+    {
 		proGlove.proGloveTriggerPlayFeedback(1);
+	}
+
+    function triggerFeedback_2() 
+    {
+		proGlove.proGloveTriggerPlayFeedback(2);
+	}
+
+    function triggerFeedback_3()
+    {
+		proGlove.proGloveTriggerPlayFeedback(3);
+	}
+
+    function triggerFeedback_4()
+    {
+		proGlove.proGloveTriggerPlayFeedback(4);
+	}
+
+    function triggerFeedback_5()
+    {
+		proGlove.proGloveTriggerPlayFeedback(5);
 	}
 
 </script>
