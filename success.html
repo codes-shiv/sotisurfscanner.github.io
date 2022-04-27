@@ -25,15 +25,28 @@
 
 <script>
 
+     
+
      function itemFound(item) {
-		setScreenTemplate();
+		setScreenTemplate_PG2C();
+       // setScreenTemplate_PG1C();
 		triggerFeedback();
      }
 
-    function setScreenTemplate() {
-	    var data = "1;;Item [D5427] is available!";
+    function setScreenTemplate_PG2C() {
+	//  var data = "1;;Item [D5427] is available!";
+        var data = "1;;Anuj;2;;Sharma";
+		proGlove.setScreen("PG2C",data,null,"FULL_REFRESH","10000");
+    }
+
+
+        function setScreenTemplate_PG1C() {
+	//  var data = "1;;Item [D5427] is available!";
+        var data = "1;;Anuj123;2;;Sharma";
 		proGlove.setScreen("PG1C",data,null,"FULL_REFRESH","10000");
     }
+
+    
 
 	function triggerFeedback(){
 		proGlove.proGloveTriggerPlayFeedback(1);
