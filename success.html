@@ -42,12 +42,14 @@
         
       
 	  triggerFeedback_1();
-     // triggerFeedback_2();  //Uncomment to call feedback function with value 2 function
+      //triggerFeedback_2();  //Uncomment to call feedback function with value 2 function
       //triggerFeedback_3();  //Uncomment to call feedback function with value 3 function 
       //triggerFeedback_4();  //Uncomment to call feedback function with value 4 function
       //triggerFeedback_5();  //Uncomment to call feedback function with value 5 function
      }
+  
 
+    //Functions to set templates 
     function setScreenTemplate_PG1() 
     {
         var data = "1;D5427;Available";
@@ -98,15 +100,11 @@
 	    proGlove.setScreen("PG2I",data,null,"FULL_REFRESH","10000");
     }
 
-    function setScreenTemplate_PG1E() 
-    {
-    	var data = "1;;Not Available"; 
-	    proGlove.setScreen("PG1E",data,null,"FULL_REFRESH","100000");
-    }
+    
 
    
 
-
+   //Functions to set feedback
 	function triggerFeedback_1()
     {
 		proGlove.proGloveTriggerPlayFeedback(1);

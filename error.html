@@ -29,8 +29,9 @@
 
         function itemNotFound(item)
          {
-	         setErrorScreen_PG2E();
+	    
            //setErrorScreen_PG1E();
+             setErrorScreen_PG2E();
    	        
            //triggerErrorFeedback_1();
              triggerErrorFeedback_2();  //Uncomment to call feedback function with value 2 function
@@ -54,7 +55,7 @@
 		}
 
     
-
+        //Functions to set feedback
 		function triggerErrorFeedback_1()
         {
 			proGlove.proGloveTriggerPlayFeedback(1);

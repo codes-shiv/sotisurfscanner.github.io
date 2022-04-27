@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="background:cyan">
+<body style="background:yellow">
 <link rel="stylesheet" href="styles.css">
 
 <section id="surf_logo">
@@ -27,13 +27,20 @@
 
 <script>
 
-        function itemNoMatch(item) {
-	        setInformation_PG1I();
+
+        function itemNoMatch(item)
+         {
+            setInformation_PG1I();
            // setInformation_PG2I();
-   	        triggerInfoFeedback();
+           
+           //triggerInfoFeedback_1();   //Uncomment to call feedback function with value 1 function
+           //triggerInfoFeedback_2();  //Uncomment to call feedback function with value 2 function
+           triggerInfoFeedback_3();     
+           //triggerInfoFeedback_4();  //Uncomment to call feedback function with value 4 function
+           //triggerInfoFeedback_5();  //Uncomment to call feedback function with value 5 function
+         }
 
-        }
-
+        //Functions to set templates
         function setInformation_PG1I() 
         {
             var data = "1;;No Match";
@@ -47,9 +54,30 @@
        }
 
     
+        //Functions to set feedback
+		function triggerInfoFeedback_1()
+        {
+			proGlove.proGloveTriggerPlayFeedback(1);
+		}
 
-		function triggerInfoFeedback(){
+        function triggerInfoFeedback_2()
+        {
+			proGlove.proGloveTriggerPlayFeedback(2);
+		}
+
+        function triggerInfoFeedback_3()
+        {
 			proGlove.proGloveTriggerPlayFeedback(3);
+		}
+
+        function triggerInfoFeedback_4()
+        {
+			proGlove.proGloveTriggerPlayFeedback(4);
+		}
+
+        function triggerInfoFeedback_5()
+        {
+			proGlove.proGloveTriggerPlayFeedback(5);
 		}
 
 
