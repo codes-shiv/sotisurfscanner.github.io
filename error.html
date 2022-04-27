@@ -27,18 +27,19 @@
 
 <script>
 
-        function itemNotFound(item) {
-	        //setErrorScreen_PG2E();
-            setErrorScreen_PG1E();
-   	        triggerErrorFeedback();
+        function itemNotFound(item)
+         {
+	         setErrorScreen_PG2E();
+           //setErrorScreen_PG1E();
+   	        
+           //triggerErrorFeedback_1();
+             triggerErrorFeedback_2();  //Uncomment to call feedback function with value 2 function
+           //triggerErrorFeedback_3();  //Uncomment to call feedback function with value 3 function 
+           //triggerErrorFeedback_4();  //Uncomment to call feedback function with value 4 function
+           //triggerErrorFeedback_5();  //Uncomment to call feedback function with value 5 function
+         }
 
-        }
-
-        function setErrorScreen_PG2E() 
-        {
-            var data = "1;;Error;2;;Item [D3385] is not in inventory!";
-			proGlove.setScreen("PG2E",data,null,"FULL_REFRESH","10000");
-		}
+        
 
         function setErrorScreen_PG1E() 
        {
@@ -46,10 +47,37 @@
 	    proGlove.setScreen("PG1E",data,null,"FULL_REFRESH","10000");
        }
 
+       function setErrorScreen_PG2E() 
+        {
+            var data = "1;;Not Available;2;;Item not in inventory!";
+			proGlove.setScreen("PG2E",data,null,"FULL_REFRESH","10000");
+		}
+
     
 
-		function triggerErrorFeedback(){
+		function triggerErrorFeedback_1()
+        {
+			proGlove.proGloveTriggerPlayFeedback(1);
+		}
+       
+        function triggerErrorFeedback_2()
+        {
 			proGlove.proGloveTriggerPlayFeedback(2);
+		}
+        
+        function triggerErrorFeedback_3()
+        {
+			proGlove.proGloveTriggerPlayFeedback(3);
+		}
+        
+        function triggerErrorFeedback_4()
+        {
+			proGlove.proGloveTriggerPlayFeedback(4);
+		}
+        
+        function triggerErrorFeedback_5()
+        {
+			proGlove.proGloveTriggerPlayFeedback(5);
 		}
 
 
