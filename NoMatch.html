@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background:yellow">
+<link rel="stylesheet" href="styles.css">
+
+<section id="surf_logo">
+    <div class="margin-top center-div">
+
+        <p id="deviceName" style="color:white;font-size:26px;"><strong>Device Name: </strong>iPhone</p>
+        <p id="deviceId" style="color:white;font-size:26px;"><strong>Device Id: </strong>D5330</p>
+        <p id="deviceStatus" style="color:white;font-size:26px;"><strong>Status: </strong>No Match</p>
+        <p id="deviceLocation" style="color:white;font-size:26px;"><strong>Location: </strong>Gurgaon Office</p>
+
+        <label id="text-error" style="color:white;font-size:36px;"><br></label>
+
+
+    </div>
+
+</section>
+
+
+</body>
+
+<script>
+
+        function itemNotFound(item) {
+	        setInformation_PG1I();
+           // setInformation_PG2I();
+   	        triggerInfoFeedback();
+
+        }
+
+        function setInformation_PG1I() 
+        {
+            var data = "1;;No Match";
+			proGlove.setScreen("PG1I",data,null,"FULL_REFRESH","10000");
+		}
+
+        function setInformation_PG2I() 
+       {
+    	var data = "1;;No Match;2;;Try Again"; 
+	    proGlove.setScreen("PG1E",data,null,"FULL_REFRESH","10000");
+       }
+
+    
+
+		function triggerInfoFeedback(){
+			proGlove.proGloveTriggerPlayFeedback(3);
+		}
+
+
+</script>
+</html>
