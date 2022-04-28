@@ -29,9 +29,16 @@
 
         function itemNotFound(item)
          {
-	    
-           //setErrorScreen_PG1E();
-             setErrorScreen_PG2E();
+            //setErrorScreen_PG1();
+            //setErrorScreen_PG1A();
+            //setErrorScreen_PG2();
+            //setErrorScreen_PG3();
+            //setErrorScreen_PG1C();
+            //setErrorScreen_PG2C();
+            //setErrorScreen_PG1E();
+              setErrorScreen_PG2E();
+            //setErrorScreen_PG1I();
+            //setErrorScreen_PG2I();
    	        
            //triggerErrorFeedback_1();
              triggerErrorFeedback_2();  //Uncomment to call feedback function with value 2 function
@@ -41,7 +48,7 @@
          }
 
         
-
+        //Functions to set templates
         function setErrorScreen_PG1E() 
        {
     	var data = "1;;Not Available"; 
@@ -53,6 +60,58 @@
             var data = "1;;Not Available;2;;Item not in inventory!";
 			proGlove.setScreen("PG2E",data,null,"FULL_REFRESH","10000");
 		}
+
+        function setErrorScreen_PG1() 
+    {
+        var data = "1;D3385;Not Available";
+	    proGlove.setScreen("PG1",data,null,"FULL_REFRESH","10000");
+    }
+
+    function setErrorScreen_PG1A() 
+    {
+    	var data = "1;;Available";
+	    proGlove.setScreen("PG1A",data,null,"FULL_REFRESH","10000");
+    }
+
+    function setErrorScreen_PG2() 
+    {
+    	var data = "1;D5427;Available;2;Model;Google Pixel";
+	    proGlove.setScreen("PG2",data,null,"FULL_REFRESH","10000");
+    }
+
+    function setErrorScreen_PG3() 
+    {
+    	var data = "1;D5427;Available;2;Model;Google Pixel;3;Quantity;1";
+	    proGlove.setScreen("PG3",data,null,"FULL_REFRESH","10000");
+    }
+
+    function setErrorScreen_PG1C() 
+    {
+    	var data = "1;;Available";
+	    proGlove.setScreen("PG1C",data,null,"FULL_REFRESH","10000");
+    }
+
+    function setErrorScreen_PG2C() 
+    {
+    	var data = "1;;Available;2;;Google Pixel";
+	    proGlove.setScreen("PG2C",data,null,"FULL_REFRESH","10000");
+    }
+
+    
+    function setErrorScreen_PG1I() 
+    {
+    	var data = "1;;No match !!!";
+	    proGlove.setScreen("PG1I",data,null,"FULL_REFRESH","10000");
+    }
+
+    function setErrorScreen_PG2I() 
+    {
+    	var data = "1;;No match;2;;Try again.....";
+	    proGlove.setScreen("PG2I",data,null,"FULL_REFRESH","10000");
+    }
+
+    
+
 
     
         //Functions to set feedback
