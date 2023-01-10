@@ -134,6 +134,16 @@
 		function showInformation(){
 			window.location = 'NoMatch.html';
 		}
+		
+		function handleProGloveDoubleClick() {
+	   var inputs = document.getElementsByTagName('input');
+        for (var i = 0; i < inputs.length; i++) {
+        if (document.activeElement.id == inputs[i].id && i+1 < inputs.length ) {
+            inputs[i+1].focus();
+            break;   
+        }
+    } 
+	}
 
 	</script>
 </html>
