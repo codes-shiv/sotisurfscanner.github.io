@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Camera Barcode Scanner</title>
+</head>
+<body>
+
+    <!-- App Logo Section -->
+    <section id="surf_logo">
+        <div class="margin-top rcorners center-div">
+            <div class="left-margin bottom-padding">
+                <div class="sub-title-top-bottom">
+                    <h1>SOTI SURF<br></h1>
+                </div>
+                <img src="app_icon.png" alt="SOTI SURF" width="100" height="100">
+            </div>
+        </div>
+    </section>
+
+    <!-- Camera Barcode Scan Section -->
+    <section id="scan_camera">
+        <div class="margin-top rcorners center-div">
+            <div class="left-margin bottom-padding">
+                <div class="sub-title-top-bottom">
+                    <h1>Scan with Device Camera<br></h1>
+                </div>
+                <form>
+                    <label for="cameraBarcode">Camera Barcode:</label><br>
+                    <input type="text" id="cameraBarcode" name="cameraBarcode"><br><br>
+                    <button type="button" onclick="startCameraScan()">Scan Barcode with Camera</button>
+                </form>
+                <p id="cameraScanStatus"></p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<!-- JavaScript -->
+<script>
+    // Called by Android after scanning is complete
+    function fillScannedValue(value) {
+        document.getElementById("cameraBarcode").value = value;
+        document.getElementById("cameraScanStatus").innerText = "Barcode Scanned: " + value;
+    }
+
+    // Trigger Android barcode scanner from camera
+    function startCameraScan() {
+        var time = new Date();
+        document.getElementById("cameraScanStatus").innerText = "Starting scan at " + time;
+        if (typeof AndroidInterface !== "undefined" && AndroidInterface.startBarcodeScan) {
+            AndroidInterface.startBarcodeScan();
+        } else {
+            alert("Barcode scanning not supported in this environment.");
+        }
+    }
+</script>
+</html>
